@@ -1,0 +1,150 @@
+body {
+    font-family: 'Cabin', sans-serif;
+    font-family: 'Lobster', sans-serif;
+}
+
+#logo-ricomida {
+    margin: 0px
+}
+
+nav li {
+    font-weight: 400;
+    font-family: 'Cabin', sans-serif;
+    padding-right: 5px;
+}
+
+.bg-ricomida {
+    background-color: #373A3C;
+}
+
+.pizza-section {
+    margin-top: 24px;
+    width: 70%;
+}
+
+.pizza-section h1 {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    border-bottom: 2px solid #000;
+    margin: 0px;
+    padding-bottom: 25px;
+}
+
+.pizza-section h5 {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0px;
+    padding-top: 15px;
+}
+
+.pizza-section button {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+
+#carouselExampleIndicators {
+    padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+    #carouselExampleIndicators {
+        display: none;
+    }
+}
+
+.ingredientes-preparacion {
+    width: 70%;
+    border-bottom: 2px solid #000;
+}
+
+.ingredientes-preparacion h5 {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.ingredientes-preparacion ul,
+ol,
+p {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+
+}
+
+.ingredientes-preparacion ul {
+    list-style-type: none
+}
+
+.recetas {
+    margin-bottom: 50px;
+}
+
+.recetas h2 {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 25px;
+    margin-bottom: 50.5px;
+}
+
+#card-recipes {
+    margin-inline: 50px;
+}
+
+.recetas h5 {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.recetas p {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.newsletter {
+    background-color: #DC3545;
+    color: #fff;
+    padding: 204.2px 0;
+    padding-inline: 50px;
+}
+
+.newsletter h3 {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.newsletter h4 {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    margin: 0px;
+}
+
+.ricomida {
+    font-family: 'Lobster', sans-serif;
+    font-weight: 400;
+}
+
+.newsletter button {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 55px;
+}
+
+footer {
+    background-color: #373A3C;
+    color: #fff;
+    padding: 43.3px 0;
+}
