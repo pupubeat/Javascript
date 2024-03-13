@@ -1,0 +1,27 @@
+.bg-hero {
+    background-color: #373A3C;
+}
+
+.bg-hero img {
+    width: 45px;
+    padding-bottom: 5px;
+}
+
+.bg-hero h2 {
+    display: inline-block;
+    margin: 0px;
+    padding-left: 5px;
+}
+
+#formHero {
+    margin-inline: auto;
+}
+
+.hero-pic {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#btnBuscar {
+    margin-top: 15px;
+}

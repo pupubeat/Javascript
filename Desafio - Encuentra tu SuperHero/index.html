@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhero</title>
+
+    <!--Bootstrap CCS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!--Archivo CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-hero" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/sh2.jpg" alt="hero-logo">
+                <h2>Superhero</h2>
+            </a>
+        </div>
+    </nav>
+
+    <main class="container" id="buscadorHero">
+        <div class="row">
+            <form id="formHero" class="col-6">
+                <div class="hero-pic">
+                    <img src="assets/img/sh1.jpg" alt="hero-pic">
+                </div>
+                <h2>¡Encuentra a tu Superhero!</h2>
+                <p>Ingresa el número del Superhero a buscar.</p>
+                <input type="text" id="inputNumber" placeholder="Ingrese un número aquí" class="form-control">
+                <button id="btnBuscar" type="submit" class="btn btn-danger">Buscar</button>
+            </form>
+        </div>
+    </main>
+
+    <section class="container">
+        <div class="row">
+            <article class="col-6 py-5" id="heroCards">
+
+            </article>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="col-6 py-5" id="chartContainer" style="height: 370px; width: 100%;"></div>
+    </section>
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!--JQuery CanvasJS-->
+    <script src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"></script>
+
+    <!--Archivo JS-->
+    <script src="assets/js/log.js"></script>
+</body>
+
+</html>
