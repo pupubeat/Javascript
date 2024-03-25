@@ -1,6 +1,5 @@
 // Extraer elementos del DOM.
 const postData = document.querySelector("#post-data")
-const traerPosts = document.querySelector("#btnPosts")
 
 // Obtener data de la AÍ a través de fetch
 const getPosts = async () => {
