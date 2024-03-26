@@ -3,8 +3,10 @@ const main = (() => {
     // Extraer elementos del DOM.
     const resultsElement = document.querySelector("#results")
 
-    //
+    // Función que devuelve data de la API externa
     const dataFetch = async () => {
+
+        // Manejo de errores try-catch
         try {
             const response = await fetch("https://randomuser.me/api/?results=10")
             const { results } = await response.json()
@@ -20,14 +22,14 @@ const main = (() => {
                 </div>
                 `
             })
-            //
+
         }
         catch (error) {
             console.log(error.message)
         }
     }
 
-    //
+    // Retornar la función de la data API con función pública.
     return {
         getData() {
             dataFetch()
@@ -37,5 +39,6 @@ const main = (() => {
 })();
 
 document.addEventListener(`DOMContentLoaded`, () => {
+    // Invocar función.
     main.getData()
 })
