@@ -1,0 +1,29 @@
+{{>navbar}}
+
+<h1>
+    Clínica DENDE Spa
+</h1>
+
+<h3>
+    Mujeres:
+</h3>
+
+<ul>
+    {{#each mujeres}}
+    <li>Nombre: {{this.nombre}} - Apellido: {{this.apellido}} - ID: {{this.id}} - Timestamp:
+        {{this.timestamp}}</li>
+    {{/each}}
+</ul>
+
+<h3>
+    Hombres:
+</h3>
+
+<ul>
+    {{#each hombres}}
+    <li>Nombre: {{this.nombre}} - Apellido: {{this.apellido}} - ID: {{this.id}} - Timestamp:
+        {{this.timestamp}}</li>
+    {{/each}}
+</ul>
+
+{{>footer}}
