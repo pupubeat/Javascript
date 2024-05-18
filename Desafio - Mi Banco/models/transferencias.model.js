@@ -17,13 +17,15 @@ const findCuentasbyId = async (ID) => {
     return rows
 }
 
+// Creación de una transacción entre 2 cuentas.
 const createTransaccion = async (CUENTA_ORIGEN, CUENTA_DESTINO, MONTO) => {
     try {
-        await pool.query('BEGIN')
+        await pool.query('BEGIN') // Esperar al inicio de la transacción.
         await cuentasModel.updateSaldo(CUENTA_ORIGEN, -MONTO)
         await cuentasModel.updateSaldo(CUENTA_DESTINO, +MONTO)
 
         const query = {
+            // Texto y valores parametrizados.
             text: `
             INSERT INTO TRANSFERENCIAS
             (MONTO, CUENTA_ORIGEN, CUENTA_DESTINO)
@@ -33,7 +35,7 @@ const createTransaccion = async (CUENTA_ORIGEN, CUENTA_DESTINO, MONTO) => {
             values: [MONTO, CUENTA_ORIGEN, CUENTA_DESTINO]
         }
         const { rows } = pool.query(query)
-        await pool.query('COMMIT')
+        await pool.query('COMMIT') // Esperar que se cumpla el COMMIT, en caso de que se efectue sin problemas la transacción.
         return rows[0]
 
     } catch (error) {
@@ -44,6 +46,7 @@ const createTransaccion = async (CUENTA_ORIGEN, CUENTA_DESTINO, MONTO) => {
     }
 }
 
+// Exportar modelos de las Transferencias, para interactuar por sgte con el Controller del mismo.
 export const transferenciasModel = {
     findCuentasbyId,
     createTransaccion
