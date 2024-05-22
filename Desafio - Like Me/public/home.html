@@ -85,7 +85,7 @@
       let usuario = $("form:first input:first").val();
       let url = $("form:first input:last").val();
       let descripcion = $("form:first textarea").val();
-      const { data } = await axios.post("/post", {
+      const { data } = await axios.post("/posts", {
         usuario,
         url,
         descripcion,
@@ -98,6 +98,7 @@
   async function getPosts() {
     const { data } = await axios.get("/posts");
     $(".posts").html("");
+    console.log(data)
     $.each(data, (i, u) => {
       $(".posts").append(/*html*/`
       <div class="card col-12 col-sm-4 d-inline mx-0 px-3">

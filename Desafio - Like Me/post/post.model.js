@@ -8,7 +8,7 @@ export const findAll = async () => {
         `
     }
     const { rows } = await db.query(query)
-    return rows[0]
+    return rows
 }
 
 // Model para crear valores de usuario, url y descripcion en tabla POSTS.
@@ -31,7 +31,7 @@ export const update = async ({ id }) => {
         text: `
         UPDATE POSTS
         SET likes = likes + 1
-        WHERE id = #1
+        WHERE id = $1
         RETURNING *
         `,
         values: [id]
