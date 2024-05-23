@@ -3,7 +3,7 @@ import { estudiantesControllers } from '../controllers/estudiantes.controller.js
 
 const router = Router()
 
-// Ruta para agregar un nuevo estudiante.s
+// Ruta para agregar un nuevo estudiante.
 router.post('/', estudiantesControllers.addEstudiante)
 
 // Ruta para consultar los estudiantes registrados.
