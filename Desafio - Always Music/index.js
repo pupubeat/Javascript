@@ -1,5 +1,6 @@
+import 'dotenv/config' // .env
 import express from 'express'
-import estudianteRouter from './routers/estudiantes.router.js'
+import estudiantesRouter from './routers/estudiantes.router.js'
 
 const app = express()
 
@@ -8,7 +9,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Middleware de los routers
-app.use('/estudiantes', estudianteRouter)
+app.use('/estudiantes', estudiantesRouter)
 
 // Conectar al puerto 3000 o a uno en específico.
 const PORT = process.env.PORT || 3000

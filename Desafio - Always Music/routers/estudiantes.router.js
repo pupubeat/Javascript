@@ -13,7 +13,7 @@ router.get('/', estudiantesControllers.getAllEstudiantes)
 router.get('/:rut', estudiantesControllers.getEstudianteByRut)
 
 // Ruta para actualizar la información de un estudiante.
-router.update('/:rut', estudiantesControllers.updateEstudiante)
+router.put('/:rut', estudiantesControllers.updateEstudiante)
 
 // Ruta para eliminar el registro de un estudiante.
 router.delete('/:rut', estudiantesControllers.removeEstudiante)
