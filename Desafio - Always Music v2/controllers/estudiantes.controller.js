@@ -19,7 +19,7 @@ export const addEstudiante = async (req, res) => {
 // PATH /estudiantes
 export const getAllEstudiantes = async (req, res) => {
     try {
-        const estudiantes = await estudiantesModels.getAllEstudiantes()
+        const estudiantes = await estudiantesModels.findAll()
         return res.json(estudiantes)
     } catch (error) {
         console.log(error) // Capturar error en consola

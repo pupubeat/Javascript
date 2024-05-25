@@ -9,7 +9,8 @@ export const register = async ({ nombre, rut, curso, nivel }) => {
         VALUES ($1, $2, $3, $4)
         RETURNING *
         `,
-        values: [nombre, rut, curso, nivel]
+        values: [nombre, rut, curso, nivel],
+        rowMode: "array"
     }
     const { rows } = await pool.query(query)
     return rows[0]
@@ -20,7 +21,8 @@ export const findAll = async () => {
     const query = {
         text: `
         SELECT * FROM ESTUDIANTES
-        `
+        `,
+        rowMode: "array"
     }
     const { rows } = await pool.query(query)
     return rows
@@ -33,7 +35,8 @@ export const findByRut = async ({ rut }) => {
         SELECT * FROM ESTUDIANTES
         WHERE rut = $1
         `,
-        values: [rut]
+        values: [rut],
+        rowMode: "array"
     }
     const { rows } = await pool.query(query)
     return rows[0]
@@ -44,13 +47,14 @@ export const update = async ({ nombre, rut, curso, nivel }) => {
     const query = {
         text: `
         UPDATE ESTUDIANTES
-        SET nombre = $1
-        curso = $3
+        SET nombre = $1,
+        curso = $3,
         nivel = $4
         WHERE rut = $2
         RETURNING *
         `,
-        values: [nombre, rut, curso, nivel]
+        values: [nombre, rut, curso, nivel],
+        rowMode: "array"
     }
     const { rows } = await pool.query(query)
     return rows[0]
@@ -64,7 +68,8 @@ export const remove = async ({ rut }) => {
         WHERE rut = $1
         RETURNING *
         `,
-        values: [rut]
+        values: [rut],
+        rowMode: "array"
     }
     const { rows } = await pool.query(query)
     return rows[0]
