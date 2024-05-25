@@ -76,6 +76,7 @@ export const removeEstudiante = async (req, res) => {
     }
 }
 
+// Exportar los controllers
 export const estudiantesControllers = {
     addEstudiante,
     getAllEstudiantes,

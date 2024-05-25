@@ -65,7 +65,6 @@ export const remove = async ({ rut }) => {
     return rows[0]
 }
 
-
 // Exportar los models.
 export const estudiantesModels = {
     register,
