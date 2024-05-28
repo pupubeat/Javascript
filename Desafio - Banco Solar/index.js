@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Middleware para archivos estáticos.
-app.use()
+app.use(express.static(__dirname + '/public'))
 
 // Middleware para routers de usuarios.
 app.use('/usuarios', usuariosRouters)
