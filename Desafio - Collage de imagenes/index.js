@@ -1,30 +1,21 @@
 import express from 'express'
-import fileUpload from 'express-fileupload'
-import path from 'path'
-import { fileURLToPath } from 'url'
 import imgRouter from './routers/img.router.js'
+import fileUploadConfig from './utils/fileUploadConfig.js'
 
 const app = express()
-const __dirname = import.meta.dirname
-const __filename = fileURLToPath(import.meta.url);
-
-app.use(
-    fileUpload({
-        limits: { fileSize: 5000000 }, //10mb
-        abortOnLimit: true,
-        responseOnLimit: "No puedes exceder de 5mb.",
-    })
-);
 
 // Archivos estáticos públicos.
-app.use(express.static(__dirname + '/public'))
+app.use(express.static('/public'))
 
 // Middlewares para activar el req.body
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+// Middleware utils -> express-fileupload
+app.use(fileUploadConfig)
+
 // Middleware para Routers.
-app.use('/imagen', imgRouter)
+app.use('/', imgRouter)
 
 // Conectar al puerto 3000 o a uno en específico.
 const PORT = process.env.PORT || 3000
