@@ -13,6 +13,6 @@ router.get('/collage', imgControllers.getCollage)
 router.post('/imagen', imgControllers.addImg)
 
 // Ruta que reciba como parámetro el nombre de una imagen y la elimine de la carpeta en donde están siendo alojadas las imágenes.
-router.delete('/imagen/:nombre', imgControllers.removeImg)
+router.get('/delete/:nombre', imgControllers.removeImg)
 
 export default router

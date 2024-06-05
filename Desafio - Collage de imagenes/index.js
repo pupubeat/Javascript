@@ -1,11 +1,13 @@
 import express from 'express'
 import imgRouter from './routers/img.router.js'
 import fileUploadConfig from './utils/fileUploadConfig.js'
+import 'dotenv/config' // .env
 
 const app = express()
+const __dirname = import.meta.dirname
 
 // Archivos estáticos públicos.
-app.use(express.static('/public'))
+app.use(express.static(__dirname + '/public'))
 
 // Middlewares para activar el req.body
 app.use(express.json())
@@ -18,7 +20,7 @@ app.use(fileUploadConfig)
 app.use('/', imgRouter)
 
 // Conectar al puerto 3000 o a uno en específico.
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT
 app.listen(PORT, () => {
     console.log(`Example app listening http://localhost:${PORT}`)
 })

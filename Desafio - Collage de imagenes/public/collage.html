@@ -1,14 +1,14 @@
 <h1>Collage de imagenes</h1>
 
 <div class="grid-container" style="width: 600px">
-  <div class="uno"><a href="/deleteImg/imagen-1.jpg">1</a></div>
-  <div class="dos"><a href="/deleteImg/imagen-2.jpg">2</a></div>
-  <div class="tres"><a href="/deleteImg/imagen-3.jpg">3</a></div>
-  <div class="cuatro"><a href="/deleteImg/imagen-4.jpg">4</a></div>
-  <div class="cinco"><a href="/deleteImg/imagen-5.jpg">5</a></div>
-  <div class=""><a href="/deleteImg/imagen-6.jpg">6</a></div>
-  <div class=""><a href="/deleteImg/imagen-7.jpg">7</a></div>
-  <div class=""><a href="/deleteImg/imagen-8.jpg">8</a></div>
+  <div class="uno"><a href="/delete/imagen-1.jpg">1</a></div>
+  <div class="dos"><a href="/delete/imagen-2.jpg">2</a></div>
+  <div class="tres"><a href="/delete/imagen-3.jpg">3</a></div>
+  <div class="cuatro"><a href="/delete/imagen-4.jpg">4</a></div>
+  <div class="cinco"><a href="/delete/imagen-5.jpg">5</a></div>
+  <div class="seis"><a href="/delete/imagen-6.jpg">6</a></div>
+  <div class="siete"><a href="/delete/imagen-7.jpg">7</a></div>
+  <div class="ocho"><a href="/delete/imagen-8.jpg">8</a></div>
 </div>
 <br />
 <a href="/"><button>Subir otra imagen</button></a>
@@ -19,9 +19,11 @@
     text-align: center;
     padding: 10px;
   }
+
   .uno {
     grid-area: uno;
   }
+
   .dos {
     grid-area: dos;
   }
@@ -52,7 +54,7 @@
     padding: 3px;
   }
 
-  .grid-container > div {
+  .grid-container>div {
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 20px 0;
@@ -66,27 +68,35 @@
     justify-content: center;
     align-items: center;
   }
+
   .grid-container div:nth-child(1) {
     background-image: url("/imgs/imagen-1.jpg");
   }
+
   .grid-container div:nth-child(2) {
     background-image: url("/imgs/imagen-2.jpg");
   }
+
   .grid-container div:nth-child(3) {
     background-image: url("/imgs/imagen-3.jpg");
   }
+
   .grid-container div:nth-child(4) {
     background-image: url("/imgs/imagen-4.jpg");
   }
+
   .grid-container div:nth-child(5) {
     background-image: url("/imgs/imagen-5.jpg");
   }
+
   .grid-container div:nth-child(6) {
     background-image: url("/imgs/imagen-6.jpg");
   }
+
   .grid-container div:nth-child(7) {
     background-image: url("/imgs/imagen-7.jpg");
   }
+
   .grid-container div:nth-child(8) {
     background-image: url("/imgs/imagen-8.jpg");
   }
