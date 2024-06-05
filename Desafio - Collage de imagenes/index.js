@@ -4,10 +4,9 @@ import fileUploadConfig from './utils/fileUploadConfig.js'
 import 'dotenv/config' // .env
 
 const app = express()
-const __dirname = import.meta.dirname
 
 // Archivos estáticos públicos.
-app.use(express.static(__dirname + '/public'))
+app.use(express.static('public'))
 
 // Middlewares para activar el req.body
 app.use(express.json())
