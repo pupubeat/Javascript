@@ -1,12 +1,13 @@
 import { Router } from "express";
+import { joyasControllers } from "../controllers/joyas.controller.js";
 
 const router = Router()
 
 // Crear una ruta GET /joyas que devuelva la estructura HATEOAS de todas las joyas almacenadas en la base de datos.
-router.get('/joyas',)
+router.get('/joyas', joyasControllers.getAllJoyas)
 
 // Crear una ruta GET /joyas/categoria/:categoria que devuelva solo las joyas correspondientes a la categoría obtenida.
-router.get('/joyas/categoria/:categoria')
+router.get('/joyas/categoria/:categoria', joyasControllers.getAllJoyasByCategoria)
 
 // Crear una ruta GET /joyas que permita el filtrado por campos de las joyas.
 router.get('/joyas')
