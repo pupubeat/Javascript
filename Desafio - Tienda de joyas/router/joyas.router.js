@@ -3,16 +3,16 @@ import { joyasControllers } from "../controllers/joyas.controller.js";
 
 const router = Router()
 
-// Crear una ruta GET /joyas que devuelva la estructura HATEOAS de todas las joyas almacenadas en la base de datos.
-router.get('/joyas', joyasControllers.getAllJoyas)
+// Ruta que devuelve la estructura HATEOAS de todas las joyas almacenadas en la base de datos.
+router.get('/', joyasControllers.getAllJoyas)
 
-// Crear una ruta GET /joyas/categoria/:categoria que devuelva solo las joyas correspondientes a la categoría obtenida.
-router.get('/joyas/categoria/:categoria', joyasControllers.getAllJoyasByCategoria)
+// Ruta que devuelve una joya a través del ID.
+router.get('/:id', joyasControllers.getJoyaByID)
+
+// Ruta que devuelve solo las joyas correspondientes a la categoría obtenida.
+router.get('/categoria/:categoria', joyasControllers.getAllJoyasByCategoria)
 
 // Crear una ruta GET /joyas que permita el filtrado por campos de las joyas.
-router.get('/joyas')
-
-// Crear una ruta que devuelva como payload un JSON con un mensaje de error cuando el usuario consulte el id de una joya que no exista.
-
+// router.get('/joyas')
 
 export default router

@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Middleware para Routers.
-app.use('/', joyasRouter)
+app.use('/joyas', joyasRouter)
 
 // Conectar al puerto 3000 o a uno en específico.
 const PORT = process.env.PORT
