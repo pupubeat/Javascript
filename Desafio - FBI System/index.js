@@ -9,6 +9,9 @@ app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+// Middleware para Router de los agantes.
+app.use('/api/v1/users', agentesRouter)
+
 // Conectar al puerto 3000 o a uno en específico.
 const PORT = process.env.PORT
 app.listen(PORT, () => {
