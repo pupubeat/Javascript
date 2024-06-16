@@ -5,7 +5,7 @@ const register = async ({ titulo, artista, tono }) => {
     const query = {
         text: `
         INSERT INTO CANCIONES
-        (TITULO, ARTISTA, TONO])
+        (TITULO, ARTISTA, TONO)
         VALUES ($1, $2, $3)
         RETURNING *
         `,

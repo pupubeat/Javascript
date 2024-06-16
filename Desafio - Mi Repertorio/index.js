@@ -2,6 +2,8 @@ import 'dotenv/config'
 import express from 'express'
 import cancionesRouter from './routers/canciones.router.js'
 
+const app = express()
+
 // Archivos estáticos públicos.
 app.use(express.static('public'))
 
