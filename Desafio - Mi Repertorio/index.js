@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Middleware para los router de canciones.
-app.use('canciones', cancionesRouter)
+app.use('/canciones', cancionesRouter)
 
 // Conectar al puerto 3000 o a uno en específico.
 const PORT = process.env.PORT
