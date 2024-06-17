@@ -6,10 +6,10 @@ const router = Router()
 // Ruta para recibir los datos para realizar una nueva transferencia. 
 // Se debe ocupar una transacción SQL en la consulta a la base de datos.
 // PATH /transferencias/transferencia
-router.post('/transferencia', transferenciasController)
+router.post('/transferencia', transferenciasController.createTransferencia)
 
 // Ruta para devolver todas las transferencias almacenadas en la base de datos en formato de arreglo.
 // PATH /transferencias
-router.get('/', transferenciasController)
+router.get('/', transferenciasController.getAllTranferencias)
 
 export default router
