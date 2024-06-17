@@ -1,5 +1,4 @@
 import express from 'express'
-import pg from 'pg'
 import { engine } from 'express-handlebars';
 import 'dotenv/config'
 
