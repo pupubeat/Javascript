@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/', viewsRouter)
 
 // Middleware para los routers de los skaters/participantes
-app.use('/api/v1', skatersRouter)
+app.use('/api/v1/skaters', skatersRouter)
 
 // Conectar al puerto 3000 o a uno en específico.
 const PORT = process.env.PORT
