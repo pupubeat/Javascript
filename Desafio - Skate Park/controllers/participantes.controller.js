@@ -2,7 +2,7 @@ import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 import { skaterModels } from "../models/participantes.model.js"
 
-export const register = async (req, res) => {
+export const registerSkater = async (req, res) => {
     try {
         const { email, nombre, anos_experiencia, especialidad, foto } = req.body
         console.log(req.body)
@@ -22,9 +22,11 @@ export const register = async (req, res) => {
     }
 }
 
+export const loginSkater = 
+
 export const skatersControllers = {
-    register,
-    login,
+    registerSkater,
+    loginSkater,
     getAllSkaters,
     getOneSkater,
     modifySkater,

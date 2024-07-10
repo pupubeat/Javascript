@@ -12,9 +12,6 @@ router.post('/login', skatersControllers.login)
 // Ruta para obtener a todos los participantes de la database.
 router.get('/', skatersControllers.getAllSkaters)
 
-// Ruta para obtener a todos los participantes de la database.
-router.get('/', skatersControllers.getAllSkaters)
-
 // Ruta para obtener a un solo participante en específico de la database, a través de su email.
 router.get('/:email', skatersControllers.getOneSkater)
 
