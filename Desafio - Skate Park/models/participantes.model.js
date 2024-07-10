@@ -1,5 +1,8 @@
 export const skaterModels = {
     register,
     login,
-    findOneByEmail
+    findOneByEmail,
+    findAll,
+    updateByEmail,
+    removeByEmail
 }
