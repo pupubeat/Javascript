@@ -1,9 +1,11 @@
 import { pool } from '../database/connection.db.js'
 
+// Model para registar un Skater.
 export const register = async ({ email, nombre, password, anos_experiencia, especialidad, foto, estado }) => {
     const query = {
         text:
-            `INSERT INTO skaters
+            `
+            INSERT INTO skaters
             (email, nombre, password, anos_experiencia, especialidad, foto, estado)
             VALUES ($1, $2, $3, $4, $5, $6, $7)
             RETURNING *
@@ -14,9 +16,22 @@ export const register = async ({ email, nombre, password, anos_experiencia, espe
     return rows[0]
 }
 
+// Model para buscar un skater en específico de la database, a través del email.
+export const findOneByEmail = async ({ email }) => {
+    const query = {
+        text:
+            `
+            SELECT * FROM skaters
+            WHERE email = $1
+            `,
+        values: [email]
+    }
+    const rows = await pool.query(query)
+    return rows[0]
+}
+
 export const skaterModels = {
     register,
-    login,
     findOneByEmail,
     findAll,
     updateByEmail,

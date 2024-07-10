@@ -61,7 +61,7 @@ export const getAllSkaters = async (req, res) => {
     }
 }
 
-// Controller para un skater en específico de la database, a través del email.
+// Controller para buscar un skater en específico de la database, a través del email.
 export const getOneSkater = async (req, res) => {
     try {
         const { email } = req.params
