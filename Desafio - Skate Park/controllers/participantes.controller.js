@@ -22,7 +22,13 @@ export const registerSkater = async (req, res) => {
     }
 }
 
-export const loginSkater = 
+export const loginSkater = async (req, res) => {
+    try {
+
+    } catch (error) {
+
+    }
+}
 
 export const skatersControllers = {
     registerSkater,
