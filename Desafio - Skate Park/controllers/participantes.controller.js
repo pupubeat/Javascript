@@ -84,7 +84,6 @@ export const modifySkater = async (req, res) => {
         console.log(req.params)
         const { nombre, password, anos_experiencia, especialidad, foto, estado } = req.body
         console.log(req.body)
-        const skater = await skaterModels.updateByEmail(email)
         const newData = {
             nombre,
             anos_experiencia,
@@ -96,11 +95,11 @@ export const modifySkater = async (req, res) => {
             const hashedPassword = await bcrypt.hash(password, 10)
             newData.password = hashedPassword
         }
-        const updatedSkater = await skaterModels.updateByEmail(email, newData)
-        if (!updatedSkater) {
+        const skater = await skaterModels.updateByEmail(email, newData)
+        if (!skater) {
             return res.status(404).json({ message: 'Usuario no encontrado.' })
         }
-        res.json(updatedSkater)
+        res.json(skater)
 
     } catch (error) {
         console.log(error)
