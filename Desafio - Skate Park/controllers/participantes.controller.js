@@ -5,7 +5,7 @@ import { skaterModels } from "../models/participantes.model.js"
 // Controller para registar un Skater.
 export const registerSkater = async (req, res) => {
     try {
-        const { email, nombre, password, anos_experiencia, especialidad, foto } = req.body
+        const { email, nombre, password, anos_experiencia, especialidad, foto, estado } = req.body
         console.log(req.body)
         const hashedPassword = await bcrypt.hash(password, 10)
         const nuevoSkater = await skaterModels.register({
