@@ -30,6 +30,18 @@ export const findOneByEmail = async ({ email }) => {
     return rows[0]
 }
 
+// Model para obtener todos los skaters de la database.
+export const findAll = async () => {
+    const query = {
+        text:
+            `
+            SELECT * FROM skaters
+            `,
+    }
+    const rows = await pool.query(query)
+    return rows
+}
+
 export const skaterModels = {
     register,
     findOneByEmail,
