@@ -92,11 +92,31 @@ export const modifySkater = async (req, res) => {
             foto,
             estado
         }
-
         if (password) {
-
+            const hashedPassword = await bcrypt.hash(password, 10)
+            newData.password = hashedPassword
         }
+        const updatedSkater = await skaterModels.updateByEmail(email, newData)
+        if (!updatedSkater) {
+            return res.status(404).json({ message: 'Usuario no encontrado.' })
+        }
+        res.json(updatedSkater)
 
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+// Controller para editar la data de un skater en específico de la database, a través del email.
+export const removeSkater = (req, res) => {
+    try {
+        const { email, nombre, password, anos_experiencia, especialidad, foto, estado } = req.body
+        console.log(req.body)
+        const skater = await skaterModels.removeByEmail(email)
+        if (!skater) {
+            return res.status(404).json({ message: 'Usuario no encontrado.' })
+        }
+        res.json(skater)
     } catch (error) {
         console.log(error)
     }
