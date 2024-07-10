@@ -15,7 +15,7 @@ export const register = async (req, res) => {
             especialidad,
             foto
         })
-        res.status(201).json({ message: 'Usuario creado con éxito' })
+        res.status(201).json({ message: 'Usuario creado con éxito:', nuevoSkater })
     } catch (error) {
         console.log(error)
         res.status(500)

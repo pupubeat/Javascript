@@ -1,3 +1,4 @@
 export const skaterModels = {
-    register
+    register,
+    login
 }
