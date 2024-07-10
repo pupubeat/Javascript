@@ -4,10 +4,10 @@ import { skatersControllers } from "../controllers/participantes.controller.js";
 const router = Router()
 
 // Ruta para registrar nuevos participantes.
-router.post('/register', skatersControllers.register)
+router.post('/register', skatersControllers.registerSkater)
 
 // Ruta para que los participantes puedan iniciar sesión con su correo y contraseña.
-router.post('/login', skatersControllers.login)
+router.post('/login', skatersControllers.loginSkater)
 
 // Ruta para obtener a todos los participantes de la database.
 router.get('/', skatersControllers.getAllSkaters)
