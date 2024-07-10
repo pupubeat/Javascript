@@ -108,7 +108,7 @@ export const modifySkater = async (req, res) => {
 }
 
 // Controller para editar la data de un skater en específico de la database, a través del email.
-export const removeSkater = (req, res) => {
+export const removeSkater = async (req, res) => {
     try {
         const { email, nombre, password, anos_experiencia, especialidad, foto, estado } = req.body
         console.log(req.body)
