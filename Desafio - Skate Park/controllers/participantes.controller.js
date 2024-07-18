@@ -125,11 +125,29 @@ export const removeSkater = async (req, res) => {
     }
 }
 
+// Perfiles de Skaters //
+
+// Controller que devuelve el perfil de un Skater, a través de su email.
+export const profileSkater = async (req, res) => {
+    try {
+        const { email } = req.user
+        const skater = await skaterModels.findOneByEmail(email)
+        if (!skater) {
+            return res.status(404).json({ message: 'Usuario no encontrado.' })
+        }
+        res.json(skater)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+// Exportar controllers.
 export const skatersControllers = {
     registerSkater,
     loginSkater,
     getAllSkaters,
     getOneSkater,
     modifySkater,
-    removeSkater
+    removeSkater,
+    profileSkater
 }
