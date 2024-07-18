@@ -2,6 +2,8 @@ import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 import { skaterModels } from "../models/participantes.model.js"
 
+// REGISTER/LOGIN //
+
 // Controller para registar un Skater.
 export const registerSkater = async (req, res) => {
     try {
@@ -50,6 +52,8 @@ export const loginSkater = async (req, res) => {
         res.status()
     }
 }
+
+// CRUD //
 
 // Controller para obtener todos los skaters de la database.
 export const getAllSkaters = async (req, res) => {

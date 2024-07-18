@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { skatersControllers } from "../controllers/participantes.controller.js";
+import { verifyToken } from "../utils/jwt.token.js";
 
 const router = Router()
 
@@ -22,7 +23,7 @@ router.put('/:email', skatersControllers.modifySkater)
 router.delete('/:email', skatersControllers.removeSkater)
 
 // Perfiles de los skaters.
-router.get('/perfil',)
+router.get('/perfil', verifyToken,)
 
 // Administradores.
 
