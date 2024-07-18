@@ -125,10 +125,10 @@ export const removeSkater = async (req, res) => {
     }
 }
 
-// Perfiles de Skaters //
+// Perfiles de Skaters y Admins//
 
 // Controller que devuelve el perfil de un Skater, a través de su email.
-export const profileSkater = async (req, res) => {
+export const getProfileSkater = async (req, res) => {
     try {
         const { email } = req.user
         const skater = await skaterModels.findOneByEmail(email)
@@ -136,6 +136,26 @@ export const profileSkater = async (req, res) => {
             return res.status(404).json({ message: 'Usuario no encontrado.' })
         }
         res.json(skater)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+// Controller que devuelve el perfil de un Administrador.
+export const getAdminSkater = async (req, res) => {
+    try {
+        const skaters = await skaterModels.findAll()
+        res.json(skaters)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+// Controller que modifica el perfil de un Administrador.
+export const putAdminSkater = async (req, res) => {
+    try {
+        const { email } = req.params
+        const { } = req.body
     } catch (error) {
         console.log(error)
     }
@@ -149,5 +169,6 @@ export const skatersControllers = {
     getOneSkater,
     modifySkater,
     removeSkater,
-    profileSkater
+    getProfileSkater,
+    getAdminSkater,
 }
