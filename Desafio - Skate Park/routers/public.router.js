@@ -17,12 +17,12 @@ router.get('/login', (req, res) => {
 
 // Sitio para acceder a una cuenta de administrador.
 router.get('/admin', (req, res) => {
-    res.sendFile(publicURL + '/login.html')
+    res.sendFile(publicURL + '/admin.html')
 })
 
 // Sitio para editar o eliminar un perfil ya existente.
 router.get('/datos', (req, res) => {
-    res.sendFile(publicURL + '/datos.html')
+    res.sendFile(publicURL + '/perfil.html')
 })
 
 export default router
